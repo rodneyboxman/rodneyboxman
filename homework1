@@ -1,0 +1,52 @@
+def main():
+    print('Please make your selection:')
+    print('1) BMI calculator')
+    print('2) Navy fat calculator')
+    print('3) YMCA fat calculator')
+    print('4) All')
+    user_choice = input('What is your selection? ')
+    if user_choice == '1':
+        bmi_calculation()
+    elif user_choice == '2':
+        Navy_calculation()
+    elif user_choice == '3':
+        ymca_calculation()
+    elif user_choice == '4':
+        all()
+
+# calculation step for conversion
+def bmi_calculation():
+    # Take user input for weight in pounds and height in inches
+    weight = int(input('Enter weight in pounds: '))
+    height = int(input('Enter height in inches: '))
+
+    user_bmi = (703*weight)/(height**2)
+    # Create constant for user BMI Classification
+    bmi_classification = "N/A"
+
+    # classify user BMI based on BMI table
+    if user_bmi <= 18.5:
+        bmi_classification = 'Underweight'
+    elif user_bmi <= 24.99:
+        bmi_classification = 'Normal Weight'
+    elif user_bmi <= 29.99:
+        bmi_classification = 'Overweight'
+    elif user_bmi <= 34.99:
+        bmi_classification = 'Obesity (Class 1)'
+    elif user_bmi <= 39.99:
+        bmi_classification = 'Obesity (Class 2)'
+    else:
+        bmi_classification = 'Morbid Obesity'
+
+    print('BMI is ', format(user_bmi, '.2f'))
+    print('BMI Classification:', bmi_classification)
+
+def navy_calculation():
+    navy_weight = input('What is your weight? ')
+    navy_waist = input('What is your waist? ')
+    navy_gender = input('What is your gender (M/F)? ')
+    print('Here are your results based on your specifications:')
+
+
+
+main()
